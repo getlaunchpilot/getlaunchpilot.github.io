@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#06060a" />
+    <title>Pricing — LaunchPilot</title>
+    <meta
+      name="description"
+      content="LaunchPilot plans from €15 excl. VAT a month. Every feature in every plan, free 3-day trial."
+    />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/logo-64.png" />
+    <link
+      rel="preload"
+      href="assets/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body data-page="pricing">
+    <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+    <header class="nav" id="nav">
+      <nav class="nav-pill" aria-label="Main" data-i18n-aria="navLabel">
+        <a class="brand" href="index.html" aria-label="LaunchPilot">
+          <img src="assets/logo-64.png" alt="" width="30" height="30" />
+          <span>LaunchPilot</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#features" data-i18n="navFeatures">Features</a></li>
+          <li>
+            <a href="pricing.html" aria-current="page" data-i18n="navPricing">Pricing</a>
+          </li>
+          <li><a href="changelog.html" data-i18n="navChangelog">Changelog</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="lang"
+            id="lang-toggle"
+            aria-label="Afficher le site en français"
+          >
+            FR
+          </button>
+          <a
+            class="btn btn-primary btn-sm download-link"
+            href="https://github.com/JordIOS/launchpilot-releases/releases/latest"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 15V3" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            </svg>
+            <span data-i18n="navDownload">Download</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ============================== En-tête ============================== -->
+      <section class="hero hero-compact">
+        <canvas class="stars" data-stars aria-hidden="true"></canvas>
+        <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="grid-lines" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <p class="announce announce-static">
+            <span class="announce-tag" data-i18n="pricingKicker">Pricing</span>
+            <span class="announce-text" data-i18n="trial">Free 3-day trial, no credit card</span>
+          </p>
+          <h1 class="hero-title">
+            <span class="title-line" data-i18n="pricingHeroTitle1">Simple pricing.</span>
+            <span class="title-line gradient-text" data-i18n="pricingHeroTitle2"
+              >No surprises.</span
+            >
+          </h1>
+          <p class="lead hero-fade" data-i18n="pricingHeroLead">
+            Every feature in every plan. Plans differ only by volume: members, clients, quotes and
+            automations.
+          </p>
+          <div class="hero-fade">
+            <div
+              class="period"
+              role="group"
+              aria-label="Billing period"
+              data-i18n-aria="periodLabel"
+            >
+              <span class="period-indicator" aria-hidden="true"></span>
+              <button
+                type="button"
+                class="period-btn"
+                data-period="month"
+                aria-pressed="true"
+                data-i18n="monthly"
+              >
+                Monthly
+              </button>
+              <button type="button" class="period-btn" data-period="year" aria-pressed="false">
+                <span data-i18n="yearly">Yearly</span>
+                <span class="pill" data-i18n="yearlyOffer">2 months free</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Offres ============================== -->
+      <section class="section pricing-plans" aria-labelledby="plans-title">
+        <div class="container">
+          <h2 id="plans-title" class="sr-only" data-i18n="plansTitle">Plans</h2>
+          <ul class="plans">
+            <li class="plan spot reveal" data-plan="starter">
+              <p class="match-chip" data-i18n="fitsLabel">Fits your needs</p>
+              <h3>Starter</h3>
+              <p class="plan-tagline" data-i18n="starterTagline">To get started as a freelancer.</p>
+              <p class="price">
+                <span class="amount">€15</span>
+                <span class="per" data-i18n="perMonth">excl. VAT / month</span>
+              </p>
+              <p class="price-note">&nbsp;</p>
+              <p class="billed">&nbsp;</p>
+              <ul class="limits">
+                <li data-i18n="starter1">2 members and invitations</li>
+                <li data-i18n="starter2">100 clients</li>
+                <li data-i18n="starter3">20 quotes per month</li>
+                <li data-i18n="starter4">3 automations</li>
+              </ul>
+              <a
+                class="btn btn-ghost download-link"
+                href="https://github.com/JordIOS/launchpilot-releases/releases/latest"
+                data-i18n="startTrial"
+                >Start free trial</a
+              >
+            </li>
+            <li class="plan featured spot reveal" data-plan="pro">
+              <p class="badge" data-i18n="popular">For growing teams</p>
+              <p class="match-chip" data-i18n="fitsLabel">Fits your needs</p>
+              <h3>Pro</h3>
+              <p class="plan-tagline" data-i18n="proTagline">For small, growing teams.</p>
+              <p class="price">
+                <span class="amount">€29</span>
+                <span class="per" data-i18n="perMonth">excl. VAT / month</span>
+              </p>
+              <p class="price-note">&nbsp;</p>
+              <p class="billed">&nbsp;</p>
+              <ul class="limits">
+                <li data-i18n="pro1">10 members and invitations</li>
+                <li data-i18n="pro2">2,000 clients</li>
+                <li data-i18n="pro3">500 quotes per month</li>
+                <li data-i18n="pro4">25 automations</li>
+              </ul>
+              <a
+                class="btn btn-primary btn-glow download-link"
+                href="https://github.com/JordIOS/launchpilot-releases/releases/latest"
+                data-i18n="startTrial"
+                >Start free trial</a
+              >
+            </li>
+            <li class="plan spot reveal" data-plan="business">
+              <p class="match-chip" data-i18n="fitsLabel">Fits your needs</p>
+              <h3>Business</h3>
+              <p class="plan-tagline" data-i18n="businessTagline">For SMBs with high volumes.</p>
+              <p class="price">
+                <span class="amount">€59</span>
+                <span class="per" data-i18n="perMonth">excl. VAT / month</span>
+              </p>
+              <p class="price-note">&nbsp;</p>
+              <p class="billed">&nbsp;</p>
+              <ul class="limits">
+                <li data-i18n="business1">50 members and invitations</li>
+                <li data-i18n="business2">Unlimited clients</li>
+                <li data-i18n="business3">Unlimited quotes</li>
+                <li data-i18n="business4">Unlimited automations</li>
+              </ul>
+              <a
+                class="btn btn-ghost download-link"
+                href="https://github.com/JordIOS/launchpilot-releases/releases/latest"
+                data-i18n="startTrial"
+                >Start free trial</a
+              >
+            </li>
+          </ul>
+          <ul class="trust reveal">
+            <li data-i18n="trust1">Free 3-day trial</li>
+            <li data-i18n="trust2">No credit card required</li>
+            <li data-i18n="trust3">Prices excl. VAT</li>
+            <li data-i18n="trust4">Data hosted in the EU</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================== Assistant de choix ============================== -->
+      <section class="section finder-section" aria-labelledby="finder-title">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="kicker" data-i18n="finderKicker">Plan finder</p>
+            <h2 id="finder-title" data-i18n="finderTitle">Which plan fits you?</h2>
+            <p class="section-lead" data-i18n="finderLead">
+              Describe your business. We suggest the smallest plan that covers it.
+            </p>
+          </div>
+          <div class="finder reveal">
+            <div class="finder-inputs">
+              <div class="range" data-need="members">
+                <div class="range-head">
+                  <label for="need-members" data-i18n="needMembers">Team members</label>
+                  <output for="need-members" class="range-value">1</output>
+                </div>
+                <input type="range" id="need-members" min="1" max="50" step="1" value="1" />
+              </div>
+              <div class="range" data-need="clients">
+                <div class="range-head">
+                  <label for="need-clients" data-i18n="needClients">Clients</label>
+                  <output for="need-clients" class="range-value">50</output>
+                </div>
+                <input type="range" id="need-clients" min="0" max="5000" step="50" value="50" />
+              </div>
+              <div class="range" data-need="quotes">
+                <div class="range-head">
+                  <label for="need-quotes" data-i18n="needQuotes">Quotes per month</label>
+                  <output for="need-quotes" class="range-value">10</output>
+                </div>
+                <input type="range" id="need-quotes" min="0" max="1000" step="5" value="10" />
+              </div>
+              <div class="range" data-need="automations">
+                <div class="range-head">
+                  <label for="need-automations" data-i18n="needAutomations">Automations</label>
+                  <output for="need-automations" class="range-value">2</output>
+                </div>
+                <input type="range" id="need-automations" min="0" max="50" step="1" value="2" />
+              </div>
+            </div>
+            <div class="finder-result spot" aria-live="polite">
+              <p class="finder-label" data-i18n="finderResult">Recommended plan</p>
+              <p class="finder-plan" id="finder-plan">Starter</p>
+              <p class="finder-price" id="finder-price">&nbsp;</p>
+              <p class="finder-reason" id="finder-reason">&nbsp;</p>
+              <div class="finder-meters" aria-hidden="true" id="finder-meters"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Comparaison ============================== -->
+      <section class="section compare-section" aria-labelledby="compare-title">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="kicker" data-i18n="compareKicker">Compare</p>
+            <h2 id="compare-title" data-i18n="compareTitle">Every plan, side by side</h2>
+          </div>
+          <div class="compare-wrap reveal">
+            <table class="compare">
+              <caption class="sr-only" data-i18n="compareCaption">
+                Plan comparison
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only" data-i18n="colFeature">Feature</span></th>
+                  <th scope="col" data-plan="starter">
+                    Starter <span class="compare-price"></span>
+                  </th>
+                  <th scope="col" data-plan="pro" class="col-featured">
+                    Pro <span class="compare-price"></span>
+                  </th>
+                  <th scope="col" data-plan="business">
+                    Business <span class="compare-price"></span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group">
+                  <th scope="colgroup" colspan="4" data-i18n="groupLimits">Limits</th>
+                </tr>
+                <tr data-limit="members">
+                  <th scope="row" data-i18n="rowMembers">Members and invitations</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-limit="clients">
+                  <th scope="row" data-i18n="rowClients">Clients</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-limit="quotes">
+                  <th scope="row" data-i18n="rowQuotes">Quotes per month</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-limit="automations">
+                  <th scope="row" data-i18n="rowAutomations">Automations</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr class="group">
+                  <th scope="colgroup" colspan="4" data-i18n="groupIncluded">
+                    Included in every plan
+                  </th>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowPipeline">Client records and sales pipeline</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowInvoices">
+                    Quotes, compliant invoices and credit notes
+                  </th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowRecurring">Recurring invoices</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowPayments">Deposits and partial payments</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowCashflow">90-day cash-flow forecast</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowTasks">Tasks, calendar and reminders</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowInsights">Sourced recommendations</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowExport">
+                    Accounting export, CSV import and backup
+                  </th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowRoles">Roles and audit log</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+                <tr data-included>
+                  <th scope="row" data-i18n="rowApp">Windows app in English and French</th>
+                  <td></td>
+                  <td class="col-featured"></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Questions ============================== -->
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="container narrow">
+          <div class="section-head center reveal">
+            <p class="kicker" data-i18n="faqKicker">Questions</p>
+            <h2 id="faq-title" data-i18n="pricingFaqTitle">Pricing questions</h2>
+          </div>
+          <div class="faq reveal">
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="pa1"
+                  id="pq1"
+                  data-i18n="pq1"
+                >
+                  Do I need a credit card for the trial?
+                </button>
+              </h3>
+              <div class="faq-a" id="pa1" role="region" aria-labelledby="pq1">
+                <div>
+                  <p data-i18n="pa1">
+                    No. Download LaunchPilot, create your organisation and use it for 3 days without
+                    entering any payment details.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="pa2"
+                  id="pq2"
+                  data-i18n="pq2"
+                >
+                  Are some features reserved for higher plans?
+                </button>
+              </h3>
+              <div class="faq-a" id="pa2" role="region" aria-labelledby="pq2">
+                <div>
+                  <p data-i18n="pa2">
+                    No. Every plan includes every feature. Plans differ only by the number of
+                    members, clients, quotes per month and automations.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="pa3"
+                  id="pq3"
+                  data-i18n="pq3"
+                >
+                  How does yearly billing work?
+                </button>
+              </h3>
+              <div class="faq-a" id="pa3" role="region" aria-labelledby="pq3">
+                <div>
+                  <p data-i18n="pa3">
+                    You pay for 10 months and get 12: two months free compared with monthly billing.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="pa4"
+                  id="pq4"
+                  data-i18n="pq4"
+                >
+                  Are prices shown with or without VAT?
+                </button>
+              </h3>
+              <div class="faq-a" id="pa4" role="region" aria-labelledby="pq4">
+                <div>
+                  <p data-i18n="pa4">
+                    Without. All prices are shown excluding VAT; VAT is added according to the rules
+                    that apply to your business.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="pa5"
+                  id="pq5"
+                  data-i18n="q5"
+                >
+                  What happens when I reach a plan limit?
+                </button>
+              </h3>
+              <div class="faq-a" id="pa5" role="region" aria-labelledby="pq5">
+                <div>
+                  <p data-i18n="a5">
+                    New items of that kind are refused (one more client, for example). Your existing
+                    data stays intact and editable.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="pa6"
+                  id="pq6"
+                  data-i18n="pq6"
+                >
+                  Where is my data stored?
+                </button>
+              </h3>
+              <div class="faq-a" id="pa6" role="region" aria-labelledby="pq6">
+                <div>
+                  <p data-i18n="pa6">
+                    In the European Union (Ireland), in a database where each organisation’s data is
+                    isolated from the others.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Appel final ============================== -->
+      <section class="final final-small" aria-labelledby="final-title">
+        <canvas class="stars" data-stars aria-hidden="true"></canvas>
+        <div class="container final-inner reveal">
+          <h2 id="final-title" data-i18n="finalTitle">Ready to take off?</h2>
+          <p data-i18n="finalText">Download LaunchPilot and start your free 3-day trial.</p>
+          <a
+            class="btn btn-primary btn-lg btn-glow download-link"
+            href="https://github.com/JordIOS/launchpilot-releases/releases/latest"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 15V3" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            </svg>
+            <span data-i18n="downloadWindows">Download for Windows</span>
+          </a>
+          <p class="meta release-meta" data-i18n="requirements">Windows 10 and 11 · 64-bit</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/logo-64.png" alt="" width="28" height="28" />
+            <span>LaunchPilot</span>
+          </a>
+          <p data-i18n="tagline">The copilot for your business.</p>
+        </div>
+        <div>
+          <h2 class="footer-title" data-i18n="footerProduct">Product</h2>
+          <ul>
+            <li><a href="index.html#features" data-i18n="navFeatures">Features</a></li>
+            <li><a href="pricing.html" data-i18n="navPricing">Pricing</a></li>
+            <li><a href="changelog.html" data-i18n="navChangelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title" data-i18n="footerResources">Resources</h2>
+          <ul>
+            <li><a href="index.html#faq" data-i18n="navFaq">FAQ</a></li>
+            <li>
+              <a
+                href="https://github.com/JordIOS/launchpilot-releases/releases"
+                data-i18n="allReleases"
+                >All releases</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span id="year">2026</span> LaunchPilot</p>
+      </div>
+    </footer>
+  </body>
+</html>

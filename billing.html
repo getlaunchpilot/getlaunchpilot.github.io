@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#06060a" />
+    <meta name="robots" content="noindex" />
+    <title>Subscription — LaunchPilot</title>
+    <meta name="description" content="Return to LaunchPilot after payment." />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/logo-64.png" />
+    <link
+      rel="preload"
+      href="assets/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body data-page="billing">
+    <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+    <header class="nav" id="nav">
+      <nav class="nav-pill" aria-label="Main" data-i18n-aria="navLabel">
+        <a class="brand" href="index.html" aria-label="LaunchPilot">
+          <img src="assets/logo-64.png" alt="" width="30" height="30" />
+          <span>LaunchPilot</span>
+        </a>
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="lang"
+            id="lang-toggle"
+            aria-label="Afficher le site en français"
+          >
+            FR
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero billing-hero">
+        <canvas class="stars" data-stars aria-hidden="true"></canvas>
+        <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="container hero-content">
+          <div class="billing-icon" id="billing-icon" data-status="success" aria-hidden="true">
+            <span class="orbit-ring"></span>
+            <svg viewBox="0 0 24 24" class="icon-success"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+            <svg viewBox="0 0 24 24" class="icon-cancel">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </div>
+          <h1 class="hero-title billing-title" id="billing-title">Thank you!</h1>
+          <p class="lead hero-fade" id="billing-text">
+            Your payment has been received. Go back to LaunchPilot: your subscription appears there
+            within a few seconds.
+          </p>
+          <div class="cta hero-fade">
+            <a class="btn btn-primary btn-lg btn-glow" href="launchpilot://billing">
+              <span data-i18n="billingBack">Back to LaunchPilot</span>
+            </a>
+          </div>
+          <p class="meta hero-fade" data-i18n="billingNote">
+            You can close this tab. LaunchPilot updates on its own.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

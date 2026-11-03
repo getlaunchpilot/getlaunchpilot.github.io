@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#06060a" />
+    <title>LaunchPilot — The business copilot for freelancers and small teams</title>
+    <meta
+      name="description"
+      content="Clients, sales pipeline, quotes, compliant invoices, payments and cash flow in one fast Windows app. Free 3-day trial."
+    />
+    <meta property="og:title" content="LaunchPilot — The business copilot" />
+    <meta
+      property="og:description"
+      content="Clients, pipeline, quotes, compliant invoices and cash flow in one Windows app."
+    />
+    <meta property="og:image" content="assets/screens/dashboard.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/logo-64.png" />
+    <link rel="apple-touch-icon" href="assets/logo-192.png" />
+    <link
+      rel="preload"
+      href="assets/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+    <header class="nav" id="nav">
+      <nav class="nav-pill" aria-label="Main" data-i18n-aria="navLabel">
+        <a class="brand" href="#top" aria-label="LaunchPilot">
+          <img src="assets/logo-64.png" alt="" width="30" height="30" />
+          <span>LaunchPilot</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features" data-i18n="navFeatures">Features</a></li>
+          <li><a href="#showcase" data-i18n="navTour">Tour</a></li>
+          <li><a href="pricing.html" data-i18n="navPricing">Pricing</a></li>
+          <li><a href="#faq" data-i18n="navFaq">FAQ</a></li>
+          <li><a href="changelog.html" data-i18n="navChangelog">Changelog</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="lang"
+            id="lang-toggle"
+            aria-label="Afficher le site en français"
+          >
+            FR
+          </button>
+          <a
+            class="btn btn-primary btn-sm download-link"
+            href="https://github.com/JordIOS/launchpilot-releases/releases/latest"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 15V3" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            </svg>
+            <span data-i18n="navDownload">Download</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ============================== Hero ============================== -->
+      <section class="hero" id="top">
+        <canvas class="stars" data-stars aria-hidden="true"></canvas>
+        <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="grid-lines" aria-hidden="true"></div>
+
+        <div class="container hero-content">
+          <a class="announce" href="#showcase">
+            <span class="announce-tag" data-i18n="announceTag">New</span>
+            <span class="announce-text" data-i18n="announce"
+              >Partial payments &amp; a 90-day cash-flow forecast</span
+            >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+          <h1 class="hero-title">
+            <span class="title-line" data-i18n="heroTitle1">The business copilot</span>
+            <span class="title-line gradient-text" data-i18n="heroTitle2"
+              >for freelancers &amp; small teams</span
+            >
+          </h1>
+          <p class="lead hero-fade" data-i18n="heroLead">
+            Clients, sales pipeline, quotes, compliant invoices, payments and cash flow — in one
+            fast, secure app that tells you what needs your attention.
+          </p>
+          <div class="cta hero-fade">
+            <a
+              class="btn btn-primary btn-lg btn-glow download-link"
+              href="https://github.com/JordIOS/launchpilot-releases/releases/latest"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M12 15V3" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              </svg>
+              <span data-i18n="downloadWindows">Download for Windows</span>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#features">
+              <span data-i18n="seeFeatures">Explore the features</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></svg>
+            </a>
+          </div>
+          <p class="meta hero-fade">
+            <span class="release-meta" data-i18n="requirements">Windows 10 and 11 · 64-bit</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span data-i18n="trial">Free 3-day trial, no credit card</span>
+          </p>
+        </div>
+
+        <div class="container hero-stage">
+          <div class="tilt" id="tilt">
+            <div class="halo" aria-hidden="true"></div>
+            <figure class="window">
+              <img
+                src="assets/screens/dashboard.png"
+                width="1440"
+                height="900"
+                alt="LaunchPilot dashboard: open pipeline, revenue won, tasks, billing and a revenue chart."
+                data-i18n-alt="altDashboard"
+              />
+            </figure>
+          </div>
+          <div class="chip chip-1" aria-hidden="true">
+            <span class="chip-icon success"
+              ><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg
+            ></span>
+            <span
+              ><strong data-i18n="chip1Title">Payment recorded</strong
+              ><small>€500.00 · FAC-2026-0001</small></span
+            >
+          </div>
+          <div class="chip chip-2" aria-hidden="true">
+            <span class="chip-icon warning"
+              ><svg viewBox="0 0 24 24">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></svg
+            ></span>
+            <span
+              ><strong data-i18n="chip2Title">Follow-up due</strong
+              ><small data-i18n="chip2Text">Website redesign · Durand &amp; Fils</small></span
+            >
+          </div>
+          <div class="chip chip-3" aria-hidden="true">
+            <span class="chip-icon primary"
+              ><svg viewBox="0 0 24 24">
+                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                <path d="M14 2v4a2 2 0 0 0 2 2h4" /></svg
+            ></span>
+            <span
+              ><strong data-i18n="chip3Title">Invoice issued</strong
+              ><small data-i18n="chip3Text">Sequential number, locked</small></span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Bandeau ============================== -->
+      <section class="marquee" aria-labelledby="marquee-title">
+        <h2 id="marquee-title" class="sr-only" data-i18n="marqueeTitle">What LaunchPilot covers</h2>
+        <div class="marquee-track">
+          <ul class="marquee-list">
+            <li data-i18n="m1">Client records</li>
+            <li data-i18n="m2">Sales pipeline</li>
+            <li data-i18n="m3">Quotes</li>
+            <li data-i18n="m4">Compliant invoices</li>
+            <li data-i18n="m5">Credit notes</li>
+            <li data-i18n="m6">Deposits &amp; partial payments</li>
+            <li data-i18n="m7">Recurring billing</li>
+            <li data-i18n="m8">Cash-flow forecast</li>
+            <li data-i18n="m9">Tasks &amp; reminders</li>
+            <li data-i18n="m10">Automations</li>
+            <li data-i18n="m11">Accounting export</li>
+          </ul>
+          <ul class="marquee-list" aria-hidden="true"></ul>
+        </div>
+      </section>
+
+      <!-- ============================== Fonctionnalités ============================== -->
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="kicker" data-i18n="featuresKicker">Everything in one place</p>
+            <h2 id="features-title" data-i18n="featuresTitle">
+              Run your business without juggling five tools
+            </h2>
+            <p class="section-lead" data-i18n="featuresLead">
+              From the first contact to the last payment, every step lives in the same app — and the
+              numbers always add up.
+            </p>
+          </div>
+
+          <ul class="bento">
+            <!-- Pipeline -->
+            <li class="card spot span-2 reveal">
+              <div class="art art-kanban" aria-hidden="true">
+                <div class="col">
+                  <span class="col-title" data-i18n="kLead">Lead</span><i></i><i class="short"></i>
+                </div>
+                <div class="col">
+                  <span class="col-title" data-i18n="kProposal">Proposal</span><i class="short"></i>
+                </div>
+                <div class="col"><span class="col-title" data-i18n="kWon">Won</span><i></i></div>
+                <i class="moving"></i>
+              </div>
+              <h3 data-i18n="f1Title">Clients &amp; pipeline</h3>
+              <p data-i18n="f1Text">
+                Client records with history and attachments, and a drag-and-drop sales pipeline with
+                follow-up dates.
+              </p>
+            </li>
+            <!-- Factures -->
+            <li class="card spot reveal">
+              <div class="art art-invoice" aria-hidden="true">
+                <div class="paper">
+                  <i class="l w60"></i><i class="l w40"></i><i class="l w80"></i
+                  ><i class="l w70"></i>
+                  <div class="pay"><span></span></div>
+                  <span class="stamp" data-i18n="stamp">Paid</span>
+                </div>
+              </div>
+              <h3 data-i18n="f2Title">Compliant invoices</h3>
+              <p data-i18n="f2Text">
+                Sequential numbering, legal mentions, credit notes and PDF — locked once issued.
+              </p>
+            </li>
+            <!-- Trésorerie -->
+            <li class="card spot reveal">
+              <div class="art art-bars" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <h3 data-i18n="f3Title">Cash-flow forecast</h3>
+              <p data-i18n="f3Text">
+                What you will collect over the next 90 days, week by week, with deposits deducted.
+              </p>
+            </li>
+            <!-- Rappels -->
+            <li class="card spot reveal">
+              <div class="art art-toasts" aria-hidden="true">
+                <span class="toast t1"><b></b><i></i></span>
+                <span class="toast t2"><b></b><i></i></span>
+                <span class="toast t3"><b></b><i></i></span>
+              </div>
+              <h3 data-i18n="f5Title">Reminders that reach you</h3>
+              <p data-i18n="f5Text">
+                Tasks, calendar and Windows notifications when a reminder is due.
+              </p>
+            </li>
+            <!-- Automatisations -->
+            <li class="card spot span-2 reveal">
+              <div class="art art-flow" aria-hidden="true">
+                <span class="node"
+                  ><small data-i18n="flowWhen">When</small
+                  ><span data-i18n="flowTrigger">A quote gets no reply for 7 days</span></span
+                >
+                <span class="wire"><i></i></span>
+                <span class="node accent"
+                  ><small data-i18n="flowThen">Then</small
+                  ><span data-i18n="flowAction">Create a follow-up task</span></span
+                >
+              </div>
+              <h3 data-i18n="f7Title">Automations</h3>
+              <p data-i18n="f7Text">
+                “When… then…” rules that create follow-ups and update statuses, with a full run
+                history.
+              </p>
+            </li>
+            <!-- Recommandations -->
+            <li class="card spot reveal">
+              <div class="art art-insights" aria-hidden="true">
+                <span class="row r1"><b class="dot-danger"></b><i></i></span>
+                <span class="row r2"><b class="dot-warning"></b><i></i></span>
+                <span class="row r3"><b class="dot-ok"></b><i></i></span>
+              </div>
+              <h3 data-i18n="f6Title">Insights you can trust</h3>
+              <p data-i18n="f6Text">
+                Every recommendation shows its source and the rule applied. No guesswork.
+              </p>
+            </li>
+            <!-- Export -->
+            <li class="card spot span-2 reveal">
+              <div class="art art-export" aria-hidden="true">
+                <span class="doc">FAC</span>
+                <span class="beam"><i></i><i></i><i></i></span>
+                <span class="doc csv">CSV</span>
+                <span class="beam"><i></i><i></i><i></i></span>
+                <span class="doc json">JSON</span>
+              </div>
+              <h3 data-i18n="f8Title">Accounting export &amp; backup</h3>
+              <p data-i18n="f8Text">
+                One file per period for your accountant, and a complete backup of your data in one
+                click.
+              </p>
+            </li>
+            <!-- Sécurité -->
+            <li class="card spot span-2 reveal">
+              <div class="art art-shield" aria-hidden="true">
+                <span class="ring"></span>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                  />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <h3 data-i18n="t1Title">Secure by design</h3>
+              <p data-i18n="t1Text">
+                Each organisation’s data is isolated by the database itself, with roles, an audit
+                log and updates installed only with your consent.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================== Vitrine ============================== -->
+      <section class="section showcase" id="showcase" aria-labelledby="showcase-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="kicker" data-i18n="tourKicker">Product tour</p>
+            <h2 id="showcase-title" data-i18n="tourTitle">Built for the way you actually work</h2>
+          </div>
+          <div class="tour">
+            <ol class="tour-steps">
+              <li class="tour-step" data-step="0">
+                <span class="step-index">01</span>
+                <p class="kicker" data-i18n="s1Kicker">Sales pipeline</p>
+                <h3 data-i18n="s1Title">Never lose track of a deal</h3>
+                <p data-i18n="s1Text">
+                  See every opportunity by stage, its value and probability. Overdue follow-ups
+                  stand out so nothing slips through.
+                </p>
+                <img
+                  class="tour-inline"
+                  src="assets/screens/pipeline.png"
+                  width="1440"
+                  height="900"
+                  loading="lazy"
+                  alt="Sales pipeline in four stages with amounts, probabilities and follow-up alerts."
+                  data-i18n-alt="altPipeline"
+                />
+              </li>
+              <li class="tour-step" data-step="1">
+                <span class="step-index">02</span>
+                <p class="kicker" data-i18n="s2Kicker">Invoicing</p>
+                <h3 data-i18n="s2Title">Invoices that follow the rules</h3>
+                <p data-i18n="s2Text">
+                  Issue, record deposits, send reminders and cancel with a credit note. The
+                  remaining balance is always up to date.
+                </p>
+                <img
+                  class="tour-inline"
+                  src="assets/screens/invoice.png"
+                  width="1440"
+                  height="900"
+                  loading="lazy"
+                  alt="Invoice with a deposit already paid, balance due and the payments panel."
+                  data-i18n-alt="altInvoice"
+                />
+              </li>
+              <li class="tour-step" data-step="2">
+                <span class="step-index">03</span>
+                <p class="kicker" data-i18n="s3Kicker">Cash flow</p>
+                <h3 data-i18n="s3Title">Know what is coming in</h3>
+                <p data-i18n="s3Text">
+                  Expected payments week by week over 90 days, calculated from your invoices — with
+                  the assumption stated in plain words.
+                </p>
+                <img
+                  class="tour-inline"
+                  src="assets/screens/cashflow.png"
+                  width="1440"
+                  height="900"
+                  loading="lazy"
+                  alt="Cash flow forecast: overdue amount, 30, 60 and 90 day totals and a weekly chart."
+                  data-i18n-alt="altCashflow"
+                />
+              </li>
+            </ol>
+            <div class="tour-stage" aria-hidden="true">
+              <div class="tour-frame window">
+                <img
+                  class="tour-shot active"
+                  src="assets/screens/pipeline.png"
+                  width="1440"
+                  height="900"
+                  alt=""
+                />
+                <img
+                  class="tour-shot"
+                  src="assets/screens/invoice.png"
+                  width="1440"
+                  height="900"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  class="tour-shot"
+                  src="assets/screens/cashflow.png"
+                  width="1440"
+                  height="900"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <div class="tour-dots"><i class="active"></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Étapes ============================== -->
+      <section class="section" aria-labelledby="how-title">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="kicker" data-i18n="howKicker">Up and running in minutes</p>
+            <h2 id="how-title" data-i18n="howTitle">Three steps to take off</h2>
+          </div>
+          <ol class="how">
+            <li class="how-step reveal">
+              <span class="how-num">1</span>
+              <h3 data-i18n="h1Title">Download</h3>
+              <p data-i18n="h1Text">
+                Install LaunchPilot on Windows in under a minute. Updates are handled for you.
+              </p>
+            </li>
+            <li class="how-step reveal">
+              <span class="how-num">2</span>
+              <h3 data-i18n="h2Title">Set up your organisation</h3>
+              <p data-i18n="h2Text">
+                Add your legal details and logo, import your clients from a CSV file, invite your
+                team.
+              </p>
+            </li>
+            <li class="how-step reveal">
+              <span class="how-num">3</span>
+              <h3 data-i18n="h3Title">Get paid</h3>
+              <p data-i18n="h3Text">
+                Send quotes, issue invoices, record payments and watch your cash flow.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================== Tarifs (aperçu, page complète : pricing.html) ============================== -->
+      <section class="section teaser-section" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <div class="teaser spot reveal">
+            <div class="teaser-text">
+              <p class="kicker" data-i18n="pricingKicker">Pricing</p>
+              <h2 id="pricing-title" class="teaser-title">Plans from €15 excl. VAT a month</h2>
+              <p class="section-lead" data-i18n="teaserLead">
+                Every feature in every plan, a free 3-day trial and no credit card required.
+              </p>
+            </div>
+            <a class="btn btn-primary btn-lg btn-glow" href="pricing.html">
+              <span data-i18n="seePricing">See pricing</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Questions ============================== -->
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="container narrow">
+          <div class="section-head center reveal">
+            <p class="kicker" data-i18n="faqKicker">Questions</p>
+            <h2 id="faq-title" data-i18n="faqTitle">Frequently asked questions</h2>
+          </div>
+          <div class="faq reveal">
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="a1"
+                  id="q1"
+                  data-i18n="q1"
+                >
+                  What do I need to run LaunchPilot?
+                </button>
+              </h3>
+              <div class="faq-a" id="a1" role="region" aria-labelledby="q1">
+                <div>
+                  <p data-i18n="a1">
+                    A PC running Windows 10 or 11 (64-bit) and an internet connection: your data is
+                    stored on the server so your team works on the same information.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="a2"
+                  id="q2"
+                  data-i18n="q2"
+                >
+                  Windows shows a warning when I run the installer. Is that normal?
+                </button>
+              </h3>
+              <div class="faq-a" id="a2" role="region" aria-labelledby="q2">
+                <div>
+                  <p data-i18n="a2">
+                    Yes. The installer is not code-signed yet, so Windows SmartScreen may show
+                    “Windows protected your PC”. Click “More info”, then “Run anyway”. Only download
+                    LaunchPilot from this website.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="a3"
+                  id="q3"
+                  data-i18n="q3"
+                >
+                  How do updates work?
+                </button>
+              </h3>
+              <div class="faq-a" id="a3" role="region" aria-labelledby="q3">
+                <div>
+                  <p data-i18n="a3">
+                    LaunchPilot checks for new versions automatically. You choose when to download
+                    and restart — nothing is installed without your consent.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="a4"
+                  id="q4"
+                  data-i18n="q4"
+                >
+                  Can I get my data out?
+                </button>
+              </h3>
+              <div class="faq-a" id="a4" role="region" aria-labelledby="q4">
+                <div>
+                  <p data-i18n="a4">
+                    At any time: CSV exports, an accounting export per period and a complete backup
+                    file of your organisation’s data.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  class="faq-q"
+                  aria-expanded="false"
+                  aria-controls="a5"
+                  id="q5"
+                  data-i18n="q5"
+                >
+                  What happens when I reach a plan limit?
+                </button>
+              </h3>
+              <div class="faq-a" id="a5" role="region" aria-labelledby="q5">
+                <div>
+                  <p data-i18n="a5">
+                    New items of that kind are refused (one more client, for example). Your existing
+                    data stays intact and editable.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== Appel final ============================== -->
+      <section class="final" aria-labelledby="final-title">
+        <canvas class="stars" data-stars aria-hidden="true"></canvas>
+        <div class="container final-inner reveal">
+          <div class="orbit" aria-hidden="true">
+            <span class="orbit-ring"></span>
+            <span class="orbit-ring two"></span>
+            <img src="assets/logo-192.png" alt="" width="96" height="96" />
+          </div>
+          <h2 id="final-title" data-i18n="finalTitle">Ready to take off?</h2>
+          <p data-i18n="finalText">Download LaunchPilot and start your free 3-day trial.</p>
+          <a
+            class="btn btn-primary btn-lg btn-glow download-link"
+            href="https://github.com/JordIOS/launchpilot-releases/releases/latest"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 15V3" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            </svg>
+            <span data-i18n="downloadWindows">Download for Windows</span>
+          </a>
+          <p class="meta release-meta" data-i18n="requirements">Windows 10 and 11 · 64-bit</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <img src="assets/logo-64.png" alt="" width="28" height="28" />
+            <span>LaunchPilot</span>
+          </a>
+          <p data-i18n="tagline">The copilot for your business.</p>
+        </div>
+        <div>
+          <h2 class="footer-title" data-i18n="footerProduct">Product</h2>
+          <ul>
+            <li><a href="#features" data-i18n="navFeatures">Features</a></li>
+            <li><a href="#showcase" data-i18n="navTour">Tour</a></li>
+            <li><a href="pricing.html" data-i18n="navPricing">Pricing</a></li>
+            <li><a href="changelog.html" data-i18n="navChangelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title" data-i18n="footerResources">Resources</h2>
+          <ul>
+            <li><a href="#faq" data-i18n="navFaq">FAQ</a></li>
+            <li>
+              <a
+                href="https://github.com/JordIOS/launchpilot-releases/releases"
+                data-i18n="allReleases"
+                >All releases</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span id="year">2026</span> LaunchPilot</p>
+      </div>
+    </footer>
+  </body>
+</html>
