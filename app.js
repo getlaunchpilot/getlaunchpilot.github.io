@@ -546,8 +546,23 @@ function renderBilling() {
 }
 
 // Microsoft Store : mention seulement, tant que la fiche n'est pas publiée (pas de faux lien).
-Object.assign(TEXTS.en, { storeSoon: 'Coming soon to the Microsoft Store' })
-Object.assign(TEXTS.fr, { storeSoon: 'Bientôt sur le Microsoft Store' })
+Object.assign(TEXTS.en, {
+  storeSoon: 'Coming soon to the Microsoft Store',
+  installTitle: 'Choose how to install',
+  storeCardSoon: 'Coming soon',
+  storeCardText: 'One-click install, no Windows warning. Automatic updates.',
+  directCardTitle: 'Direct download',
+  directCardText: 'Installer for Windows 10 and 11. Updates offered inside the app.',
+})
+Object.assign(TEXTS.fr, {
+  storeSoon: 'Bientôt sur le Microsoft Store',
+  installTitle: 'Choisissez votre installation',
+  storeCardSoon: 'Bientôt',
+  storeCardText:
+    'Installation en un clic, sans avertissement de Windows. Mises à jour automatiques.',
+  directCardTitle: 'Téléchargement direct',
+  directCardText: 'Installateur pour Windows 10 et 11. Mises à jour proposées dans le logiciel.',
+})
 
 // Page « Informations légales » (legal.html) : le texte des deux langues est dans la page.
 Object.assign(TEXTS.en, {
