@@ -3427,3 +3427,16 @@ a.choice:hover {
   margin-top: 0;
   font-size: 13px;
 }
+
+/* Téléchargement direct : l'action principale tant que le Store n'est pas disponible. */
+.choice-primary {
+  background: rgb(109 74 255 / 0.1);
+  box-shadow:
+    inset 0 0 0 1px rgb(169 150 255 / 0.5),
+    0 14px 36px -22px rgb(109 74 255 / 0.9);
+}
+
+.choice-primary .choice-icon {
+  background: linear-gradient(180deg, #7b5bff, var(--primary));
+  color: #fff;
+}
