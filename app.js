@@ -545,6 +545,23 @@ function renderBilling() {
   document.getElementById('billing-icon').dataset.status = key === 'cancel' ? 'cancel' : 'success'
 }
 
+// Microsoft Store : mention seulement, tant que la fiche n'est pas publiée (pas de faux lien).
+Object.assign(TEXTS.en, { storeSoon: 'Coming soon to the Microsoft Store' })
+Object.assign(TEXTS.fr, { storeSoon: 'Bientôt sur le Microsoft Store' })
+
+// Page « Informations légales » (legal.html) : le texte des deux langues est dans la page.
+Object.assign(TEXTS.en, {
+  legalDocumentTitle: 'Legal information — LaunchPilot',
+  legalDescription: 'Legal notice, terms of sale and privacy policy of LaunchPilot.',
+  footerLegal: 'Legal information',
+})
+Object.assign(TEXTS.fr, {
+  legalDocumentTitle: 'Informations légales — LaunchPilot',
+  legalDescription:
+    'Mentions légales, conditions générales de vente et confidentialité de LaunchPilot.',
+  footerLegal: 'Informations légales',
+})
+
 // Mêmes limites que la base de données (private.plan_limit) : à garder synchronisées.
 // null = illimité.
 const LIMITS = {
@@ -560,6 +577,53 @@ const PLAN_NAMES = { starter: 'Starter', pro: 'Pro', business: 'Business' }
  * uniquement ce qui a réellement changé pour l'utilisateur.
  */
 const CHANGELOG = [
+  {
+    version: '0.9.1',
+    date: '2026-11-04',
+    title: {
+      en: 'Clearer trial, emails in your language',
+      fr: 'Essai plus clair, e-mails dans votre langue',
+    },
+    changes: [
+      {
+        type: 'new',
+        en: 'A reminder appears two days before the end of the free trial; afterwards, without a subscription, your data stays available read-only.',
+        fr: 'Un rappel apparaît deux jours avant la fin de l’essai gratuit ; ensuite, sans abonnement, vos données restent disponibles en lecture seule.',
+      },
+      {
+        type: 'improved',
+        en: 'Account emails (confirmation, new password) redesigned and sent in your language.',
+        fr: 'E-mails du compte (confirmation, nouveau mot de passe) redessinés et envoyés dans votre langue.',
+      },
+      {
+        type: 'improved',
+        en: 'Payment pages, invoices and receipts in the language chosen in LaunchPilot.',
+        fr: 'Pages de paiement, factures et reçus dans la langue choisie dans LaunchPilot.',
+      },
+    ],
+  },
+  {
+    version: '0.9.0',
+    date: '2026-11-04',
+    title: { en: 'Subscribe online', fr: 'Abonnement en ligne' },
+    changes: [
+      {
+        type: 'new',
+        en: 'Subscribe to Starter, Pro or Business from the Subscription page, monthly or yearly, with secure payment by Stripe.',
+        fr: 'Abonnez-vous à Starter, Pro ou Business depuis la page Abonnement, au mois ou à l’année, avec un paiement sécurisé par Stripe.',
+      },
+      {
+        type: 'new',
+        en: 'Change plan at any time: the difference is prorated.',
+        fr: 'Changez d’offre à tout moment : la différence est calculée au prorata.',
+      },
+      {
+        type: 'new',
+        en: 'Manage your subscription: card, invoices and cancellation in one place.',
+        fr: 'Gérez votre abonnement : carte bancaire, factures et résiliation au même endroit.',
+      },
+    ],
+  },
   {
     version: '0.8.1',
     date: '2026-11-03',
@@ -802,6 +866,7 @@ const PAGE_META = {
   changelog: ['changelogDocumentTitle', 'changelogDescription'],
   pricing: ['pricingDocumentTitle', 'pricingDescription'],
   billing: ['billingDocumentTitle', 'billingDescription'],
+  legal: ['legalDocumentTitle', 'legalDescription'],
 }
 
 function render() {
@@ -823,6 +888,11 @@ function render() {
   }
   for (const element of document.querySelectorAll('[data-i18n-aria]')) {
     element.setAttribute('aria-label', text[element.dataset.i18nAria])
+  }
+
+  // Blocs rédigés dans chaque langue (pages légales) : seul celui de la langue choisie est visible.
+  for (const element of document.querySelectorAll('[data-lang]')) {
+    element.hidden = element.dataset.lang !== state.language
   }
 
   const toggle = document.getElementById('lang-toggle')
