@@ -554,12 +554,18 @@ Object.assign(TEXTS.en, {
   legalDocumentTitle: 'Legal information — LaunchPilot',
   legalDescription: 'Legal notice, terms of sale and privacy policy of LaunchPilot.',
   footerLegal: 'Legal information',
+  privacyDocumentTitle: 'Privacy policy — LaunchPilot',
+  privacyDescription: 'How LaunchPilot handles your personal data.',
+  footerPrivacy: 'Privacy',
 })
 Object.assign(TEXTS.fr, {
   legalDocumentTitle: 'Informations légales — LaunchPilot',
   legalDescription:
     'Mentions légales, conditions générales de vente et confidentialité de LaunchPilot.',
   footerLegal: 'Informations légales',
+  privacyDocumentTitle: 'Confidentialité — LaunchPilot',
+  privacyDescription: 'Comment LaunchPilot traite vos données personnelles.',
+  footerPrivacy: 'Confidentialité',
 })
 
 // Mêmes limites que la base de données (private.plan_limit) : à garder synchronisées.
@@ -867,6 +873,7 @@ const PAGE_META = {
   pricing: ['pricingDocumentTitle', 'pricingDescription'],
   billing: ['billingDocumentTitle', 'billingDescription'],
   legal: ['legalDocumentTitle', 'legalDescription'],
+  privacy: ['privacyDocumentTitle', 'privacyDescription'],
 }
 
 function render() {
